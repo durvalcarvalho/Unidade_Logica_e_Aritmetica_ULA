@@ -2,6 +2,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
+-- Essa entidade ira receber um 'result' em binario de 8 bits e um codigo de 4 bits
+-- e ira retornar 4 variaveis de 4 bits correspondente a conversao do codigo desejado em bcd 
 entity decoder is
     Port (  result : in UNSIGNED (7 downto 0);
             codigo: in STD_LOGIC_VECTOR(3 DOWNTO 0);

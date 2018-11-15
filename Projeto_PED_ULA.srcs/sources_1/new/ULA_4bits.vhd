@@ -15,6 +15,7 @@ end ULA_4bits;
 
 architecture Behavioral of ULA_4bits is
 
+-- COMPONENTE QUE IRA RETORNAR UM CODIGO BCD DE ACORDO COM O CODIGO DESEJADO
 component decoder is
     Port (  result : in UNSIGNED (7 downto 0);
             codigo: in STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -41,7 +42,7 @@ signal a_plus_1     : UNSIGNED(3 DOWNTO 0); -- somar a com '0001'
 
 signal result: UNSIGNED(7 DOWNTO 0); -- resultado da operacao que sera usada no display
 
--- ESSES SIGNAL IRÃ? RECEBER UM DOS CODIGOS ACIMA DE ACORDO COM A ENTRADA DO CODIGO
+-- ESSES SIGNALS IRA RECEBER UM DOS CODIGOS ACIMA DE ACORDO COM A ENTRADA DO CODIGO
 signal selected_result_unidade: STD_LOGIC_VECTOR(3 DOWNTO 0);
 signal selected_result_dezena: STD_LOGIC_VECTOR(3 DOWNTO 0);
 signal selected_result_centena: STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -99,7 +100,9 @@ decod: decoder PORT MAP(result, codigo, selected_result_milhar, selected_result_
 -- FIM DA ETAPA 3
 ----------------------------------------------------------------------
 
--- ETAPA 5: MOSTRAR O VALOR NO DISPLAY
--- USAR UM CLOCK PARA ALTERAR ENTRE DISPLAY E unidade, dezena, centena e milhar
+-- ETAPA 4: MOSTRAR O VALORES NO DISPLAY
+    -- ALTERNAR ENTRE OS VALORES, CENTENAS, DEZENAS, MILHAR, UNIDADE
+    -- USAR UM CLOCK PARA ALTERAR ENTRE DISPLAY E unidade, dezena, centena e milhar
+    -- CONVERTER O CODIGO BCD PARA 7 SEGMENTOS
 
 end Behavioral; 
