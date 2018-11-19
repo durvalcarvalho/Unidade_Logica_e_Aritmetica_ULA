@@ -20,7 +20,7 @@ begin
 
 aux_result <= result;
 
--- Conversão
+-- Conversao
 process(aux_result)
 begin
 
