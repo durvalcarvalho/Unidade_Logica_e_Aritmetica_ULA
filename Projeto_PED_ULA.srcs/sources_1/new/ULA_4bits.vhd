@@ -4,9 +4,9 @@ use IEEE.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity ULA_4bits is
-    Port ( binary_a : in UNSIGNED (3 downto 0);
-           binary_b : in UNSIGNED (3 downto 0);
-           modo : in UNSIGNED (3 downto 0);
+    Port ( binary_a : in STD_LOGIC_VECTOR (3 downto 0);
+           binary_b : in STD_LOGIC_VECTOR (3 downto 0);
+           modo : in STD_LOGIC_VECTOR (3 downto 0);
            codigo : in STD_LOGIC_VECTOR (2 downto 0);
            clk : in STD_LOGIC;
            anodo_display : out STD_LOGIC_VECTOR (3 downto 0);
@@ -17,7 +17,7 @@ architecture Behavioral of ULA_4bits is
 
 -- COMPONENTE QUE IRA RETORNAR UM CODIGO BCD DE ACORDO COM O CODIGO DESEJADO
 component decoder is
-    Port (  result : in UNSIGNED (7 downto 0);
+    Port (  result : in STD_LOGIC_VECTOR (7 downto 0);
             codigo: in STD_LOGIC_VECTOR(3 DOWNTO 0);
             result_BCD_milhar: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
             result_BCD_centena: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -30,23 +30,23 @@ component bcd_to_7seg is
            SEG_7 : out STD_LOGIC_VECTOR (6 downto 0));
 end component;
 
--- VARIAVEIS QUE IRAO RECEBER O RESULTADO DAS OPERAÇÕES
-signal all_zero     : UNSIGNED(3 DOWNTO 0):=(others=>'0'); -- zerar todos os bits da variÃ¡vel
-signal all_one      : UNSIGNED(3 DOWNTO 0):=(others=>'1'); -- um em todos os bits da variÃ¡vel
-signal a_or_b       : UNSIGNED(3 DOWNTO 0); -- realizar operaÃ§Ã£o 'or' bit a bit de a com b
-signal a_and_b      : UNSIGNED(3 DOWNTO 0); -- realizar operaÃ§Ã£o 'and' bit a bit de a com b
-signal a_xor_b      : UNSIGNED(3 DOWNTO 0); -- realizar operaÃ§Ã£o 'xor' bit a bit de a com b
-signal not_a        : UNSIGNED(3 DOWNTO 0); -- realizar operaÃ§Ã£o 'not' bit a bit de a com b (inversora)
-signal a_plus_b     : UNSIGNED(3 DOWNTO 0); -- somar a com b (retornar bit indicando se houve ou nÃ£o overflow) -- TRATAR CASOS DE OVERFLOW
-signal a_minus_b    : UNSIGNED(3 DOWNTO 0); -- subtrair a com b (retornar bit indicando se houve ou nÃ£o overflow) -- TRATAR CASOS DE OVERFLOW
-signal a_x_b        : UNSIGNED(7 DOWNTO 0); -- multiplicar a com b (retornar bit indicando se houve ou nÃ£o overflow)
-signal a_div_b      : UNSIGNED(6 DOWNTO 0); -- dividir a com b (retornar bit indicando se houve ou nÃ£o overflow)
-signal a_mod_b      : UNSIGNED(3 DOWNTO 0); -- calcular o resto da divisÃ£o de a por b
-signal a_x_a        : UNSIGNED(7 DOWNTO 0); -- calcular o quadrado de a
-signal compl_a      : UNSIGNED(3 DOWNTO 0); -- calcular o complemento de 2 de a
-signal a_plus_1     : UNSIGNED(3 DOWNTO 0); -- somar a com '0001'
+-- VARIAVEIS QUE IRAO RECEBER O RESULTADO DAS OPERA??ES
+signal all_zero     : STD_LOGIC_VECTOR(3 DOWNTO 0):=(others=>'0'); -- zerar todos os bits da variável
+signal all_one      : STD_LOGIC_VECTOR(3 DOWNTO 0):=(others=>'1'); -- um em todos os bits da variável
+signal a_or_b       : STD_LOGIC_VECTOR(3 DOWNTO 0); -- realizar operação 'or' bit a bit de a com b
+signal a_and_b      : STD_LOGIC_VECTOR(3 DOWNTO 0); -- realizar operação 'and' bit a bit de a com b
+signal a_xor_b      : STD_LOGIC_VECTOR(3 DOWNTO 0); -- realizar operação 'xor' bit a bit de a com b
+signal not_a        : STD_LOGIC_VECTOR(3 DOWNTO 0); -- realizar operação 'not' bit a bit de a com b (inversora)
+signal a_plus_b     : STD_LOGIC_VECTOR(3 DOWNTO 0); -- somar a com b (retornar bit indicando se houve ou não overflow) -- TRATAR CASOS DE OVERFLOW
+signal a_minus_b    : STD_LOGIC_VECTOR(3 DOWNTO 0); -- subtrair a com b (retornar bit indicando se houve ou não overflow) -- TRATAR CASOS DE OVERFLOW
+signal a_x_b        : STD_LOGIC_VECTOR(7 DOWNTO 0); -- multiplicar a com b (retornar bit indicando se houve ou não overflow)
+signal a_div_b      : STD_LOGIC_VECTOR(6 DOWNTO 0); -- dividir a com b (retornar bit indicando se houve ou não overflow)
+signal a_mod_b      : STD_LOGIC_VECTOR(3 DOWNTO 0); -- calcular o resto da divisão de a por b
+signal a_x_a        : STD_LOGIC_VECTOR(7 DOWNTO 0); -- calcular o quadrado de a
+signal compl_a      : STD_LOGIC_VECTOR(3 DOWNTO 0); -- calcular o complemento de 2 de a
+signal a_plus_1     : STD_LOGIC_VECTOR(3 DOWNTO 0); -- somar a com '0001'
 
-signal result: UNSIGNED(7 DOWNTO 0); -- resultado da operacao que sera usada no display
+signal result: STD_LOGIC_VECTOR(7 DOWNTO 0); -- resultado da operacao que sera usada no display
 
 -- ESSES SIGNALS IRA RECEBER UM DOS CODIGOS ACIMA DE ACORDO COM A ENTRADA DO CODIGO
 signal selected_result_unidade: STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -63,18 +63,18 @@ signal seletor_bcd: STD_LOGIC_VECTOR(1 DOWNTO 0) := "00";
 begin
 
 -- ETAPA 1: CALCULAR TODOS OS POSSSVEIS RESULTADOS
-a_or_b      <= binary_a OR binary_b;
-a_and_b     <= binary_a AND binary_b;
-a_xor_b     <= binary_a XOR binary_b;
-not_a       <= NOT binary_A;
-a_plus_b    <= binary_a + binary_b;
-a_plus_1    <= binary_a + 1;
-compl_a     <= 0 - binary_a;
-a_mod_b     <= binary_a mod binary_b;
-a_x_b       <= binary_a * binary_b;
-a_x_a       <= binary_a * binary_a;
-a_minus_b   <= binary_a + (0-binary_b); -- soma com o complemento de 2 de b
-a_div_b     <= (binary_a & "000") / (binary_b & "000");
+a_or_b      <= STD_LOGIC_VECTOR (UNSIGNED (binary_a) OR UNSIGNED (binary_B));
+a_and_b     <= STD_LOGIC_VECTOR (UNSIGNED (binary_a) AND UNSIGNED (binary_B));
+a_xor_b     <= STD_LOGIC_VECTOR (UNSIGNED (binary_a) XOR UNSIGNED (binary_B));
+not_a       <= STD_LOGIC_VECTOR (NOT UNSIGNED (binary_A));
+a_plus_b    <= STD_LOGIC_VECTOR (UNSIGNED (binary_a) + UNSIGNED (binary_B));
+a_plus_1    <= STD_LOGIC_VECTOR ((UNSIGNED (binary_a) + 1));
+compl_a     <= STD_LOGIC_VECTOR (0 - UNSIGNED (binary_a));
+a_mod_b     <= STD_LOGIC_VECTOR (UNSIGNED (binary_a) MOD UNSIGNED (binary_B));
+a_x_b       <= STD_LOGIC_VECTOR (UNSIGNED (binary_a) * UNSIGNED (binary_B));
+a_x_a       <= STD_LOGIC_VECTOR (UNSIGNED (binary_a) * UNSIGNED (binary_A));
+a_minus_b   <= STD_LOGIC_VECTOR (UNSIGNED (binary_a) + (0 - UNSIGNED (binary_b))); -- soma com o complemento de 2 de b
+a_div_b     <= STD_LOGIC_VECTOR ((UNSIGNED (binary_a) & "000") / (UNSIGNED (binary_b) & "000"));
 -- FIM DA ETAPA 1
 ------------------------------------------------------------
 
@@ -95,7 +95,7 @@ find_mode: process(modo)
             WHEN "1001" => result <= "0000" & a_minus_b; -- SUBT    (A - B)
             WHEN "1010" => result <= a_x_b;              -- MULT    (A * B)
             WHEN "1011" => result <= "0" & a_div_b;      -- DIV     (A / B)
-            WHEN "1100" => result <= "0000" & a_mod_b;   -- MOD     (A MOD B) -- resto da divisÃ£o de a por b
+            WHEN "1100" => result <= "0000" & a_mod_b;   -- MOD     (A MOD B) -- resto da divisão de a por b
             WHEN "1101" => result <= a_x_a;              -- SQA     ( A * A) 
             WHEN "1110" => result <= "0000" & compl_a;   -- NEGA    (-A) -- complemento de 2 de A
             WHEN "1111" => result <= a_plus_1;           -- ADD1    (A + 1)
@@ -105,8 +105,13 @@ end process;
 -- FIM DA ETAPA 2
 ------------------------------------------------------------------
 
--- ETAPA 3: CONVERTER A RESPOSTA PARA TODOS OS CÓDIGOS EM BCD
-decod: decoder PORT MAP(result, codigo, selected_result_milhar, selected_result_centena, selected_result_dezena, selected_result_unidade);
+-- ETAPA 3: CONVERTER A RESPOSTA PARA TODOS OS C?DIGOS EM BCD
+decod: decoder PORT MAP(result=>result,
+                        codigo=>codigo,
+                        result_BCD_milhar=>selected_result_milhar,
+                        result_BCD_centena=>selected_result_centena,
+                        result_BCD_dezena=>selected_result_dezena,
+                        result_BCD_unidade=>selected_result_unidade);
 
 -- FIM DA ETAPA 3
 ----------------------------------------------------------------------
@@ -144,7 +149,7 @@ begin
 end process;
 
 -- ETAPA 6: CONVERTER BCD PARA 7 SEGMENTO
-seg_7_decoder: bcd_to_7seg PORT MAP(display_bcd, segmento_display);
+seg_7_decoder: bcd_to_7seg PORT MAP(BCD=>display_bcd, SEG_7=>segmento_display);
 
 -- ETAPA 7: TODO
     -- QUANDO DER OVERFLOW RETORNAR ERROR
