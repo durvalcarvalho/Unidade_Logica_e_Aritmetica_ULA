@@ -25,6 +25,12 @@ component decoder is
             result_BCD_unidade: OUT STD_LOGIC_VECTOR(3 DOWNTO 0));
 end component;
 
+component bcd_to_7seg is
+    Port ( BCD : in STD_LOGIC_VECTOR (3 downto 0);
+           SEG_7 : out STD_LOGIC_VECTOR (6 downto 0));
+end component;
+
+-- VARIAVEIS QUE IRAO RECEBER O RESULTADO DAS OPERA«’ES
 signal all_zero     : UNSIGNED(3 DOWNTO 0):=(others=>'0'); -- zerar todos os bits da vari√°vel
 signal all_one      : UNSIGNED(3 DOWNTO 0):=(others=>'1'); -- um em todos os bits da vari√°vel
 signal a_or_b       : UNSIGNED(3 DOWNTO 0); -- realizar opera√ß√£o 'or' bit a bit de a com b
@@ -48,9 +54,15 @@ signal selected_result_dezena: STD_LOGIC_VECTOR(3 DOWNTO 0);
 signal selected_result_centena: STD_LOGIC_VECTOR(3 DOWNTO 0);
 signal selected_result_milhar: STD_LOGIC_VECTOR(3 DOWNTO 0);
 
+signal display_bcd: STD_LOGIC_VECTOR(3 DOWNTO 0);
+
+signal contador: STD_LOGIC_VECTOR(15 downto 0) := "0000000000000000";
+signal cont_divi: STD_LOGIC := '0';
+signal seletor_bcd: STD_LOGIC_VECTOR(1 DOWNTO 0) := "00";
+
 begin
 
--- ETAPA 1: CALCULAR TODOS OS POSS√?VEIS RESULTADOS
+-- ETAPA 1: CALCULAR TODOS OS POSSSVEIS RESULTADOS
 a_or_b      <= binary_a OR binary_b;
 a_and_b     <= binary_a AND binary_b;
 a_xor_b     <= binary_a XOR binary_b;
@@ -93,16 +105,48 @@ end process;
 -- FIM DA ETAPA 2
 ------------------------------------------------------------------
 
-
 -- ETAPA 3: CONVERTER A RESPOSTA PARA TODOS OS C”DIGOS EM BCD
 decod: decoder PORT MAP(result, codigo, selected_result_milhar, selected_result_centena, selected_result_dezena, selected_result_unidade);
 
 -- FIM DA ETAPA 3
 ----------------------------------------------------------------------
+ 
+ -- ETAPA 4: CONTADOR
+clk_divider: process(clk)
+begin
+    if rising_edge(clk) then
+        contador <= contador + 1;
+    end if;
+    
+    cont_divi <= contador(15); -- ultimo bit do contador
+end process;
 
--- ETAPA 4: MOSTRAR O VALORES NO DISPLAY
-    -- ALTERNAR ENTRE OS VALORES, CENTENAS, DEZENAS, MILHAR, UNIDADE
-    -- USAR UM CLOCK PARA ALTERAR ENTRE DISPLAY E unidade, dezena, centena e milhar
-    -- CONVERTER O CODIGO BCD PARA 7 SEGMENTOS
+-- ETAPA ? -> VERIFICAR SE HOUVE OVERFLOW, SE SIM 
+
+-- ETAPA 5: ALTERNAR ENTRE OS DISPLAYS
+escolhe_anodo: process(cont_divi)
+begin
+    if rising_edge(cont_divi) then
+    
+        if(seletor_bcd = "11") then
+            seletor_bcd <= "00";
+        else
+            seletor_bcd <= seletor_bcd + 1;
+        end if;
+        
+        case seletor_bcd is
+            when "00" => display_bcd <= selected_result_unidade; anodo_display <= "1110";
+            when "01" => display_bcd <= selected_result_dezena; anodo_display <= "1101";
+            when "10" => display_bcd <= selected_result_centena; anodo_display <= "1011";
+            when "11" => display_bcd <= selected_result_milhar; anodo_display <= "0111";
+        end case;
+    end if;
+end process;
+
+-- ETAPA 6: CONVERTER BCD PARA 7 SEGMENTO
+seg_7_decoder: bcd_to_7seg PORT MAP(display_bcd, segmento_display);
+
+-- ETAPA 7: TODO
+    -- QUANDO DER OVERFLOW RETORNAR ERROR
 
 end Behavioral; 
