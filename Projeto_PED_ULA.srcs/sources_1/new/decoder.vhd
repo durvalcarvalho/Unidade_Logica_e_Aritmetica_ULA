@@ -6,7 +6,7 @@ use IEEE.NUMERIC_STD.ALL;
 -- e ira retornar 4 variaveis de 4 bits correspondente a conversao do codigo desejado em bcd 
 entity decoder is
     Port (  result : in STD_LOGIC_VECTOR (7 downto 0); -- binario
-            codigo: in STD_LOGIC_VECTOR(3 DOWNTO 0); -- octal, binario, hexadecimal, decimal
+            codigo: in STD_LOGIC_VECTOR(1 DOWNTO 0); -- octal, binario, hexadecimal, decimal
             
             result_BCD_milhar: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
             result_BCD_centena: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -93,11 +93,11 @@ hex_decod: hexa_decoder PORT MAP(result=>result,
                                 hexa_BCD_centena=>hexadecimal_result_centena,
                                 hexa_BCD_milhar=>hexadecimal_result_milhar);
                                 
-oct_decod: octal_decoder PORT MAP(  result=>result,
-                                    oct_BCD_unidade=>octal_result_unidade,
-                                    oct_BCD_dezena=>octal_result_dezena,
-                                    oct_BCD_centena=>octal_result_centena,
-                                    oct_BCD_milhar=>octal_result_milhar);
+oct_decod: octal_decoder PORT MAP(result=>result,
+                                oct_BCD_unidade=>octal_result_unidade,
+                                oct_BCD_dezena=>octal_result_dezena,
+                                oct_BCD_centena=>octal_result_centena,
+                                oct_BCD_milhar=>octal_result_milhar);
 
 -- atribuindo o retorno com o codigo escolhido
 find_codigo: process(codigo)

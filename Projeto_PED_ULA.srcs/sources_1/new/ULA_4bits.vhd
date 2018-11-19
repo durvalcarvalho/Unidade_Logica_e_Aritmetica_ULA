@@ -7,7 +7,7 @@ entity ULA_4bits is
     Port ( binary_a : in STD_LOGIC_VECTOR (3 downto 0);
            binary_b : in STD_LOGIC_VECTOR (3 downto 0);
            modo : in STD_LOGIC_VECTOR (3 downto 0);
-           codigo : in STD_LOGIC_VECTOR (2 downto 0);
+           codigo : in STD_LOGIC_VECTOR (1 downto 0);
            clk : in STD_LOGIC;
            anodo_display : out STD_LOGIC_VECTOR (3 downto 0);
            segmento_display : out STD_LOGIC_VECTOR (6 downto 0));
@@ -98,7 +98,7 @@ find_mode: process(modo)
             WHEN "1100" => result <= "0000" & a_mod_b;   -- MOD     (A MOD B) -- resto da divisão de a por b
             WHEN "1101" => result <= a_x_a;              -- SQA     ( A * A) 
             WHEN "1110" => result <= "0000" & compl_a;   -- NEGA    (-A) -- complemento de 2 de A
-            WHEN "1111" => result <= a_plus_1;           -- ADD1    (A + 1)
+            WHEN "1111" => result <= "0000" & a_plus_1;  -- ADD1    (A + 1)
         end case;
 end process;
 

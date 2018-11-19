@@ -20,16 +20,9 @@ begin
 
 aux_result <= result;
 
--- Conversao
+-- Conversão
 process(aux_result)
-begin
-
-    -- milhar
-    while (aux_result >= "1111101000") loop
-        aux_result <= STD_LOGIC_VECTOR ( UNSIGNED(aux_result) - "1111101000");
-        aux_mil <= STD_LOGIC_VECTOR ( UNSIGNED(aux_mil) + 1);
-    end loop;
-    
+begin    
     -- centena
     while (aux_result >= "1100100") loop
             aux_result <= STD_LOGIC_VECTOR ( UNSIGNED(aux_result) - "1100100");
@@ -47,12 +40,12 @@ begin
         aux_result <= STD_LOGIC_VECTOR ( UNSIGNED(aux_result) - "1");
         aux_uni <= STD_LOGIC_VECTOR ( UNSIGNED(aux_uni) + 1);
     end loop;
+    
+    dec_BCD_unidade <= aux_uni;
+    dec_BCD_dezena  <= aux_dez;
+    dec_BCD_centena <= aux_cent;
+    dec_BCD_milhar  <= "0000";
         
 end process;
-
-dec_BCD_unidade <= aux_uni;
-dec_BCD_dezena <= aux_dez;
-dec_BCD_centena <= aux_cent;
-dec_BCD_milhar <= aux_mil;
 
 end Behavioral;
