@@ -4,3 +4,6 @@
 *.runs/
 *.sim/
 *.xpr
+*.jou
+*.log
+*.str
