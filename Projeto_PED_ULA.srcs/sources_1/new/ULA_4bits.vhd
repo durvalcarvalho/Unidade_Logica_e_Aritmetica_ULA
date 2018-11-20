@@ -17,8 +17,9 @@ architecture Behavioral of ULA_4bits is
 
 -- COMPONENTE QUE IRA RETORNAR UM CODIGO BCD DE ACORDO COM O CODIGO DESEJADO
 component decoder is
-    Port (  result : in STD_LOGIC_VECTOR (7 downto 0);
-            codigo: in STD_LOGIC_VECTOR(3 DOWNTO 0);
+    Port (  result : in STD_LOGIC_VECTOR (7 downto 0); -- binario
+            codigo: in STD_LOGIC_VECTOR(1 DOWNTO 0); -- octal, binario, hexadecimal, decimal
+            overflow: OUT STD_LOGIC := '0';
             result_BCD_milhar: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
             result_BCD_centena: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
             result_BCD_dezena: OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -27,6 +28,7 @@ end component;
 
 component bcd_to_7seg is
     Port ( BCD : in STD_LOGIC_VECTOR (3 downto 0);
+           overflow : in STD_LOGIC;
            SEG_7 : out STD_LOGIC_VECTOR (6 downto 0));
 end component;
 
@@ -59,6 +61,8 @@ signal display_bcd: STD_LOGIC_VECTOR(3 DOWNTO 0);
 signal contador: STD_LOGIC_VECTOR(15 downto 0) := "0000000000000000";
 signal cont_divi: STD_LOGIC := '0';
 signal seletor_bcd: STD_LOGIC_VECTOR(1 DOWNTO 0) := "00";
+
+signal overflow : STD_LOGIC := '0';
 
 begin
 
@@ -108,6 +112,7 @@ end process;
 -- ETAPA 3: CONVERTER A RESPOSTA PARA TODOS OS C?DIGOS EM BCD
 decod: decoder PORT MAP(result=>result,
                         codigo=>codigo,
+                        overflow=>overflow,
                         result_BCD_milhar=>selected_result_milhar,
                         result_BCD_centena=>selected_result_centena,
                         result_BCD_dezena=>selected_result_dezena,
@@ -149,7 +154,7 @@ begin
 end process;
 
 -- ETAPA 6: CONVERTER BCD PARA 7 SEGMENTO
-seg_7_decoder: bcd_to_7seg PORT MAP(BCD=>display_bcd, SEG_7=>segmento_display);
+seg_7_decoder: bcd_to_7seg PORT MAP(BCD=>display_bcd, overflow=>overflow, SEG_7=>segmento_display);
 
 -- ETAPA 7: TODO
     -- QUANDO DER OVERFLOW RETORNAR ERROR

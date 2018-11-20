@@ -4,6 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity bcd_to_7seg is
     Port ( BCD : in STD_LOGIC_VECTOR (3 downto 0);
+           overflow : in STD_LOGIC;
            SEG_7 : out STD_LOGIC_VECTOR (6 downto 0));
 end bcd_to_7seg;
 
