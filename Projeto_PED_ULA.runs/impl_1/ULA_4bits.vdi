@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Tue Nov 20 22:33:46 2018
-# Process ID: 5232
+# Start of session at: Wed Nov 21 20:24:33 2018
+# Process ID: 10664
 # Current directory: C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.runs/impl_1
 # Command line: vivado.exe -log ULA_4bits.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ULA_4bits.tcl -notrace
 # Log file: C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.runs/impl_1/ULA_4bits.vdi
@@ -13,7 +13,7 @@ source ULA_4bits.tcl -notrace
 Command: link_design -top ULA_4bits -part xc7a35tcpg236-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
-INFO: [Netlist 29-17] Analyzing 35 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2018.1
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
@@ -26,7 +26,7 @@ No Unisim elements were transformed.
 
 7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 573.324 ; gain = 316.285
+link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 572.645 ; gain = 315.359
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -34,15 +34,15 @@ Running DRC as a precondition to command opt_design
 
 Starting DRC Task
 INFO: [DRC 23-27] Running DRC with 2 threads
-ERROR: [DRC MDRV-1] Multiple Driver Nets: Net overflow has multiple drivers: segmento_display[1]_i_1/O, segmento_display[1]_i_2/O, segmento_display[1]_i_3/O, and segmento_display[1]_i_4/O.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net led_OBUF[4] has multiple drivers: led_OBUF[11]_inst_i_1/O, led_OBUF[11]_inst_i_2/O, led_OBUF[11]_inst_i_3/O, and led_OBUF[11]_inst_i_4/O.
 INFO: [Project 1-461] DRC finished with 1 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 584.660 ; gain = 11.336
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 585.004 ; gain = 12.359
 INFO: [Common 17-83] Releasing license: Implementation
 12 Infos, 0 Warnings, 0 Critical Warnings and 2 Errors encountered.
 opt_design failed
 ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
 
-INFO: [Common 17-206] Exiting Vivado at Tue Nov 20 22:34:08 2018...
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 21 20:24:53 2018...
