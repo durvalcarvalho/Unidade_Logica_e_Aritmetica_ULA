@@ -39,25 +39,38 @@ Codigo	Modo   B   A 		Resultado_Display
 10 	0111 1101 0101		0100	--   not A 	-- binario
 11 	0111 0010 0001		0016	--   not A 	-- octal
 
-00 	1000 1011 1001		Erro	-- A  +  B  -- decimal
-01 	1000 1100 0110		0012	-- A  +  B -- hexadecimal
-10 	1000 0101 1011		Erro	-- A  +  B -- binario
-11 	1000 1010 1100		0026	-- A  +  B -- octal
+00 	1000 1011 1001		Erro	-- A  +  B -- decimal
+01 	1000 1100 0110		Erro	-- A  +  B -- hexadecimal
+10 	1000 0101 0011		1000	-- A  +  B -- binario
+11 	1000 0010 0100		0006	-- A  +  B -- octal
 
 00 	1001 1101 1111		0002	-- A  -  B  -- decimal
 01 	1001 0010 1101		000B	-- A  -  B -- hexadecimal
 10 	1001 0010 0100		0010	-- A  -  B -- binario
 11 	1001 1000 1100		0004	-- A  -  B -- octal
 
-00 	1010 1101 1100		0156	-- A  .  B  -- decimal
-01 	1010 0010 1011		0022	-- A  .  B -- hexadecimal
-10 	1010 1110 0101		Erro	-- A  .  B -- binario
-11 	1010 1001 1111		0207	-- A  .  B -- octal
+00 	1010 1101 1100		Erro	-- A  .  B -- decimal
+01 	1010 0010 0100		0008	-- A  .  B -- hexadecimal
+10 	1010 0001 0101		0101	-- A  .  B -- binario
+11 	1010 0011 0010		0006	-- A  .  B -- octal
 
-00 	1011 1101 1100		xxxx	-- A  /  B  -- decimal
-01 	1011 0010 1011		xxxx	-- A  /  B -- hexadecimal
-10 	1011 1110 0101		xxxx	-- A  /  B -- binario
-11 	1011 1001 1111		xxxx	-- A  /  B -- octal
+00 	1011 0011 1100		0004	-- A  /  B -- decimal
+01 	1011 0010 1110		0007	-- A  /  B -- hexadecimal
+10 	1011 1110 0011		Erro	-- A  /  B -- binario
+11 	1011 0101 1111		0003	-- A  /  B -- octal
+
+00 	1100 0011 1001		0000	-- A mod B -- decimal
+01 	1100 0011 0111		0001	-- A mod B -- hexadecimal
+10 	1100 0101 1100		0010	-- A mod B -- binario
+11 	1100 1100 1111		0003	-- A mod B -- octal
+
+00 	1101 0011 0011		0009	--   sqa A -- decimal
+01 	1101 1011 0100		0010	--   sqa A -- hexadecimal
+10 	1101 1111 1100		Erro	--   sqa A -- binario
+11 	1101 1100 0100		0020	--   sqa A -- octal
+
+
+
 
 
 
