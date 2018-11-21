@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Projeto_PED_ULA.srcs/sources_1/new/binario_decoder.vhd" \
+"../../../../Projeto_PED_ULA.srcs/sources_1/new/dec_decoder.vhd" \
+"../../../../Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd" \
+"../../../../Projeto_PED_ULA.srcs/sources_1/new/hexa_decoder.vhd" \
+"../../../../Projeto_PED_ULA.srcs/sources_1/new/octal_decoder.vhd" \
+"../../../../Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd" \
+
+# Do not sort compile order
+nosort

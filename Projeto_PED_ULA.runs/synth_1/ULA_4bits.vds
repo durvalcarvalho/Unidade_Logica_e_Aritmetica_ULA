@@ -1,0 +1,390 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Tue Nov 20 22:31:45 2018
+# Process ID: 13204
+# Current directory: C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.runs/synth_1
+# Command line: vivado.exe -log ULA_4bits.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ULA_4bits.tcl
+# Log file: C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.runs/synth_1/ULA_4bits.vds
+# Journal file: C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source ULA_4bits.tcl -notrace
+Command: synth_design -top ULA_4bits -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 10344 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 363.844 ; gain = 98.898
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'ULA_4bits' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:16]
+WARNING: [Synth 8-614] signal 'all_zero' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'all_one' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'binary_a' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'binary_b' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'a_or_b' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'a_and_b' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'a_xor_b' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'not_a' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'a_plus_b' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'a_minus_b' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'a_x_b' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'a_div_b' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'a_mod_b' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'a_x_a' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'compl_a' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+WARNING: [Synth 8-614] signal 'a_plus_1' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:85]
+INFO: [Synth 8-3491] module 'decoder' declared at 'C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:7' bound to instance 'decod' of component 'decoder' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'decoder' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:17]
+INFO: [Synth 8-3491] module 'bin_decoder' declared at 'C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/binario_decoder.vhd:5' bound to instance 'bin_decod' of component 'bin_decoder' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'bin_decoder' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/binario_decoder.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'bin_decoder' (1#1) [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/binario_decoder.vhd:14]
+INFO: [Synth 8-3491] module 'dec_decoder' declared at 'C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/dec_decoder.vhd:6' bound to instance 'dec_decod' of component 'dec_decoder' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'dec_decoder' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/dec_decoder.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'dec_decoder' (2#1) [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/dec_decoder.vhd:15]
+INFO: [Synth 8-3491] module 'hexa_decoder' declared at 'C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/hexa_decoder.vhd:5' bound to instance 'hex_decod' of component 'hexa_decoder' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:96]
+INFO: [Synth 8-638] synthesizing module 'hexa_decoder' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/hexa_decoder.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'hexa_decoder' (3#1) [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/hexa_decoder.vhd:14]
+INFO: [Synth 8-3491] module 'octal_decoder' declared at 'C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/octal_decoder.vhd:5' bound to instance 'oct_decod' of component 'octal_decoder' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'octal_decoder' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/octal_decoder.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'octal_decoder' (4#1) [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/octal_decoder.vhd:14]
+WARNING: [Synth 8-614] signal 'decimal_result_unidade' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'decimal_result_dezena' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'decimal_result_centena' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'decimal_result_milhar' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'hexadecimal_result_unidade' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'hexadecimal_result_dezena' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'hexadecimal_result_centena' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'hexadecimal_result_milhar' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'binario_result_unidade' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'binario_result_dezena' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'binario_result_centena' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'binario_result_milhar' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'octal_result_unidade' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'octal_result_dezena' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'octal_result_centena' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+WARNING: [Synth 8-614] signal 'octal_result_milhar' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:111]
+INFO: [Synth 8-256] done synthesizing module 'decoder' (5#1) [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd:17]
+WARNING: [Synth 8-614] signal 'contador' is read in the process but is not in the sensitivity list [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:117]
+INFO: [Synth 8-3491] module 'bcd_to_7seg' declared at 'C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/bcd_to_7seg.vhd:5' bound to instance 'SEG_7_DISPLAY' of component 'bcd_to_7seg' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:150]
+INFO: [Synth 8-638] synthesizing module 'bcd_to_7seg' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/bcd_to_7seg.vhd:10]
+INFO: [Synth 8-226] default block is never used [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/bcd_to_7seg.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'bcd_to_7seg' (6#1) [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/bcd_to_7seg.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'ULA_4bits' (7#1) [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:16]
+WARNING: [Synth 8-3331] design bin_decoder has unconnected port bin_BCD_unidade[3]
+WARNING: [Synth 8-3331] design bin_decoder has unconnected port bin_BCD_unidade[2]
+WARNING: [Synth 8-3331] design bin_decoder has unconnected port bin_BCD_unidade[1]
+WARNING: [Synth 8-3331] design bin_decoder has unconnected port bin_BCD_dezena[3]
+WARNING: [Synth 8-3331] design bin_decoder has unconnected port bin_BCD_dezena[2]
+WARNING: [Synth 8-3331] design bin_decoder has unconnected port bin_BCD_dezena[1]
+WARNING: [Synth 8-3331] design bin_decoder has unconnected port bin_BCD_centena[3]
+WARNING: [Synth 8-3331] design bin_decoder has unconnected port bin_BCD_centena[2]
+WARNING: [Synth 8-3331] design bin_decoder has unconnected port bin_BCD_centena[1]
+WARNING: [Synth 8-3331] design bin_decoder has unconnected port bin_BCD_milhar[3]
+WARNING: [Synth 8-3331] design bin_decoder has unconnected port bin_BCD_milhar[2]
+WARNING: [Synth 8-3331] design bin_decoder has unconnected port bin_BCD_milhar[1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 419.066 ; gain = 154.121
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 419.066 ; gain = 154.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 419.066 ; gain = 154.121
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Basys3_Master.xdc]
+Finished Parsing XDC File [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Basys3_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ULA_4bits_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/ULA_4bits_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 750.426 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 750.426 ; gain = 485.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 750.426 ; gain = 485.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 750.426 ; gain = 485.480
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <multiplier> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/ULA_4bits.vhd:87]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 750.426 ; gain = 485.480
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
+	   3 Input      4 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      4 Bit         XORs := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 6     
+	  16 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 12    
+	  16 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module ULA_4bits 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
+	   3 Input      4 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      4 Bit         XORs := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	  16 Input      4 Bit        Muxes := 1     
+Module bin_decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module dec_decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	  16 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module hexa_decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module octal_decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 750.426 ; gain = 485.480
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:00:52 . Memory (MB): peak = 750.426 ; gain = 485.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:52 . Memory (MB): peak = 750.426 ; gain = 485.480
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:52 . Memory (MB): peak = 756.961 ; gain = 492.016
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 756.961 ; gain = 492.016
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-3352] multi-driven net overflow with 1st driver pin 'i_181/O' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/bcd_to_7seg.vhd:15]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net overflow with 2nd driver pin 'i_180/O' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/bcd_to_7seg.vhd:15]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net overflow with 3rd driver pin 'i_179/O' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/bcd_to_7seg.vhd:15]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net overflow with 4th driver pin 'i_178/O' [C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/bcd_to_7seg.vhd:15]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        1|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 756.961 ; gain = 492.016
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 756.961 ; gain = 492.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 756.961 ; gain = 492.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 756.961 ; gain = 492.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 756.961 ; gain = 492.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    18|
+|3     |LUT1   |     6|
+|4     |LUT2   |    27|
+|5     |LUT3   |    28|
+|6     |LUT4   |    20|
+|7     |LUT5   |    15|
+|8     |LUT6   |    66|
+|9     |MUXF7  |     2|
+|10    |FDRE   |    32|
+|11    |FDSE   |     1|
+|12    |IBUF   |    15|
+|13    |OBUF   |    11|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   242|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 756.961 ; gain = 492.016
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 4 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:42 . Memory (MB): peak = 756.961 ; gain = 160.656
+Synthesis Optimization Complete : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 756.961 ; gain = 492.016
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 35 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 45 Warnings, 4 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 765.867 ; gain = 513.934
+INFO: [Common 17-1381] The checkpoint 'C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.runs/synth_1/ULA_4bits.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file ULA_4bits_utilization_synth.rpt -pb ULA_4bits_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 765.867 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 20 22:32:51 2018...

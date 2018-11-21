@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1542760418">
+  <File Type="PWROPT-DCP" Name="ULA_4bits_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="ULA_4bits_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="ULA_4bits.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="ULA_4bits_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="ULA_4bits_reports.tcl"/>
+  <File Type="BG-DRC" Name="ULA_4bits.drc"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="ULA_4bits_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="ULA_4bits_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="ULA_4bits.hwdef"/>
+  <File Type="OPT-DCP" Name="ULA_4bits_opt.dcp"/>
+  <File Type="OPT-DRC" Name="ULA_4bits_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="ULA_4bits_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="ULA_4bits_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="ULA_4bits_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="ULA_4bits_placed.dcp"/>
+  <File Type="PLACE-IO" Name="ULA_4bits_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="ULA_4bits_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="ULA_4bits_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="ULA_4bits_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="ULA_4bits_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="ULA_4bits_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="ULA_4bits_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="ULA_4bits_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="ULA_4bits_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="ULA_4bits_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="ULA_4bits_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="ULA_4bits_drc_physopted.rpt"/>
+  <File Type="BG-BIT" Name="ULA_4bits.bit"/>
+  <File Type="PHYSOPT-TIMING" Name="ULA_4bits_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="ULA_4bits_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="ULA_4bits_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="ULA_4bits_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="ULA_4bits_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="ULA_4bits_drc_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="ULA_4bits.msk"/>
+  <File Type="ROUTE-DRC-RPX" Name="ULA_4bits_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="ULA_4bits.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="ULA_4bits_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="ULA_4bits.rbt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="ULA_4bits_methodology_drc_routed.rpx"/>
+  <File Type="BG-BIN" Name="ULA_4bits.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="ULA_4bits_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="ULA_4bits_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="ULA_4bits_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="ULA_4bits_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="ULA_4bits_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="ULA_4bits_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="ULA_4bits_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="ULA_4bits_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="ULA_4bits.vdi"/>
+  <File Type="ROUTE-CLK" Name="ULA_4bits_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="ULA_4bits_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="ULA_4bits_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="ULA_4bits_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="ULA_4bits_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="ULA_4bits_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="ULA_4bits.nky"/>
+  <File Type="BITSTR-BMM" Name="ULA_4bits_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="ULA_4bits.mmi"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="ULA_4bits.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="ULA_4bits.sysdef"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/bcd_to_7seg.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/binario_decoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/dec_decoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/decoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/hexa_decoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/octal_decoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ULA_4bits.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="ULA_4bits"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/Basys3_Master.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

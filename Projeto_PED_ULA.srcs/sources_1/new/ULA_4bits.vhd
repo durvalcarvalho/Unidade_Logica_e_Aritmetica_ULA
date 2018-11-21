@@ -28,7 +28,6 @@ end component;
 
 component bcd_to_7seg is
     Port ( BCD : in STD_LOGIC_VECTOR (3 downto 0);
-           overflow : in STD_LOGIC;
            SEG_7 : out STD_LOGIC_VECTOR (6 downto 0));
 end component;
 
@@ -64,6 +63,8 @@ signal seletor_bcd: STD_LOGIC_VECTOR(1 DOWNTO 0) := "00";
 
 signal overflow : STD_LOGIC := '0';
 
+signal aux_seg_display : STD_LOGIC_VECTOR (6 downto 0) := "0000000";
+
 begin
 
 -- ETAPA 1: CALCULAR TODOS OS POSSSVEIS RESULTADOS
@@ -79,9 +80,6 @@ a_x_b       <= STD_LOGIC_VECTOR (UNSIGNED (binary_a) * UNSIGNED (binary_B));
 a_x_a       <= STD_LOGIC_VECTOR (UNSIGNED (binary_a) * UNSIGNED (binary_A));
 a_minus_b   <= STD_LOGIC_VECTOR (UNSIGNED (binary_a) + (0 - UNSIGNED (binary_b))); -- soma com o complemento de 2 de b
 a_div_b     <= STD_LOGIC_VECTOR ((UNSIGNED (binary_a) & "000") / (UNSIGNED (binary_b) & "000"));
--- FIM DA ETAPA 1
-------------------------------------------------------------
-
 
 -- ETAPA 2: Atribuir a resposta esperada de acordo com o modo
 find_mode: process(modo)
@@ -106,20 +104,14 @@ find_mode: process(modo)
         end case;
 end process;
 
--- FIM DA ETAPA 2
-------------------------------------------------------------------
-
 -- ETAPA 3: CONVERTER A RESPOSTA PARA TODOS OS C?DIGOS EM BCD
-decod: decoder PORT MAP(result=>result,
+decod: decoder PORT MAP(result=>result, 
                         codigo=>codigo,
                         overflow=>overflow,
                         result_BCD_milhar=>selected_result_milhar,
                         result_BCD_centena=>selected_result_centena,
                         result_BCD_dezena=>selected_result_dezena,
                         result_BCD_unidade=>selected_result_unidade);
-
--- FIM DA ETAPA 3
-----------------------------------------------------------------------
  
  -- ETAPA 4: CONTADOR
 clk_divider: process(clk)
@@ -129,9 +121,8 @@ begin
     end if;
     
     cont_divi <= contador(15); -- ultimo bit do contador
-end process;
-
--- ETAPA ? -> VERIFICAR SE HOUVE OVERFLOW, SE SIM 
+    
+end process; 
 
 -- ETAPA 5: ALTERNAR ENTRE OS DISPLAYS
 escolhe_anodo: process(cont_divi)
@@ -146,17 +137,33 @@ begin
         
         case seletor_bcd is
             when "00" => display_bcd <= selected_result_unidade; anodo_display <= "1110";
-            when "01" => display_bcd <= selected_result_dezena; anodo_display <= "1101";
+            when "01" => display_bcd <= selected_result_dezena;  anodo_display <= "1101";
             when "10" => display_bcd <= selected_result_centena; anodo_display <= "1011";
-            when "11" => display_bcd <= selected_result_milhar; anodo_display <= "0111";
+            when "11" => display_bcd <= selected_result_milhar;  anodo_display <= "0111";
         end case;
+        
     end if;
+    
 end process;
 
 -- ETAPA 6: CONVERTER BCD PARA 7 SEGMENTO
-seg_7_decoder: bcd_to_7seg PORT MAP(BCD=>display_bcd, overflow=>overflow, SEG_7=>segmento_display);
+SEG_7_DISPLAY: bcd_to_7seg PORT MAP(BCD=>display_bcd, SEG_7=>aux_seg_display);
 
--- ETAPA 7: TODO
-    -- QUANDO DER OVERFLOW RETORNAR ERROR
+-- ETAPA 7: TRATAR OS CASOS DE OVERFLOW
+PROCESS(cont_divi)
+BEGIN
+    IF rising_edge(cont_divi) THEN
+        IF(overflow = '1') THEN
+            CASE seletor_bcd is
+                WHEN "00" => segmento_display <= "0000110"; 
+                WHEN "01" => segmento_display <= "0101111";
+                WHEN "10" => segmento_display <= "0101111"; 
+                WHEN "11" => segmento_display <= "0100011";            
+            END CASE;
+        ELSE
+            segmento_display <= aux_seg_display;
+        END IF;
+    END IF;
+end process;
 
 end Behavioral; 
