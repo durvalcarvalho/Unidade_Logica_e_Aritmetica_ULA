@@ -27,8 +27,8 @@ component decoder is
 end component;
 
 component bcd_to_7seg is
-    Port ( BCD : in STD_LOGIC_VECTOR (3 downto 0);
-           SEG_7 : out STD_LOGIC_VECTOR (6 downto 0));
+    Port (  BCD : in STD_LOGIC_VECTOR (3 downto 0);
+            SEG_7 : out STD_LOGIC_VECTOR (6 downto 0));
 end component;
 
 -- VARIAVEIS QUE IRAO RECEBER O RESULTADO DAS OPERA??ES
@@ -62,8 +62,6 @@ signal cont_divi: STD_LOGIC := '0';
 signal seletor_bcd: STD_LOGIC_VECTOR(1 DOWNTO 0) := "00";
 
 signal overflow : STD_LOGIC := '0';
-
-signal aux_seg_display : STD_LOGIC_VECTOR (6 downto 0) := "0000000";
 
 begin
 
@@ -136,34 +134,13 @@ begin
         end if;
         
         case seletor_bcd is
-            when "00" => display_bcd <= selected_result_unidade; anodo_display <= "1110";
+            when "00" => display_bcd <= selected_result_unidade; anodo_display <= "1110"; 
             when "01" => display_bcd <= selected_result_dezena;  anodo_display <= "1101";
             when "10" => display_bcd <= selected_result_centena; anodo_display <= "1011";
             when "11" => display_bcd <= selected_result_milhar;  anodo_display <= "0111";
         end case;
         
     end if;
-    
-end process;
-
--- ETAPA 6: CONVERTER BCD PARA 7 SEGMENTO
-SEG_7_DISPLAY: bcd_to_7seg PORT MAP(BCD=>display_bcd, SEG_7=>aux_seg_display);
-
--- ETAPA 7: TRATAR OS CASOS DE OVERFLOW
-PROCESS(cont_divi)
-BEGIN
-    IF rising_edge(cont_divi) THEN
-        IF(overflow = '1') THEN
-            CASE seletor_bcd is
-                WHEN "00" => segmento_display <= "0000110"; 
-                WHEN "01" => segmento_display <= "0101111";
-                WHEN "10" => segmento_display <= "0101111"; 
-                WHEN "11" => segmento_display <= "0100011";            
-            END CASE;
-        ELSE
-            segmento_display <= aux_seg_display;
-        END IF;
-    END IF;
 end process;
 
 end Behavioral; 

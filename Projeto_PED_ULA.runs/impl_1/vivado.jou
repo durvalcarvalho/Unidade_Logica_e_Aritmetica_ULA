@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Tue Nov 20 22:33:46 2018
-# Process ID: 5232
+# Start of session at: Wed Nov 21 21:50:17 2018
+# Process ID: 3868
 # Current directory: C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.runs/impl_1
 # Command line: vivado.exe -log ULA_4bits.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ULA_4bits.tcl -notrace
 # Log file: C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.runs/impl_1/ULA_4bits.vdi

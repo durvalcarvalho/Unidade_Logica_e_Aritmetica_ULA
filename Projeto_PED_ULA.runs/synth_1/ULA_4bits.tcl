@@ -17,6 +17,7 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -30,7 +31,6 @@ set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
 set_property ip_output_repo c:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/bcd_to_7seg.vhd
   C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/binario_decoder.vhd
   C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/dec_decoder.vhd
   C:/Users/FSociety/Desktop/Vivado_Projects/Projeto_PED_ULA/Projeto_PED_ULA.srcs/sources_1/new/decoder.vhd
