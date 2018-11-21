@@ -39,7 +39,7 @@ Codigo	Modo   B   A 		Resultado_Display
 10 	0111 1101 0101		0100	--   not A 	-- binario
 11 	0111 0010 0001		0016	--   not A 	-- octal
 
-00 	1000 1011 1001		0020	-- A  +  B  -- decimal
+00 	1000 1011 1001		Erro	-- A  +  B  -- decimal
 01 	1000 1100 0110		0012	-- A  +  B -- hexadecimal
 10 	1000 0101 1011		Erro	-- A  +  B -- binario
 11 	1000 1010 1100		0026	-- A  +  B -- octal
